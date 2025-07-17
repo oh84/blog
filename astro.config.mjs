@@ -14,6 +14,7 @@ export default defineConfig({
       enabled: true
     },
 
-    imageService: "cloudflare"
+    // https://docs.astro.build/ja/guides/integrations-guide/cloudflare/#imageservice
+    imageService: "compile"
   }),
 });
