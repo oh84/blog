@@ -1,13 +1,15 @@
 // @ts-check
+import { loadEnv } from 'vite';
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-
 import cloudflare from '@astrojs/cloudflare';
+
+const env = loadEnv(process.env.NODE_ENV ?? 'development', process.cwd(), '');
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: env.SITE_URL,
   integrations: [mdx(), sitemap()],
   adapter: cloudflare({
     platformProxy: {
