@@ -20,6 +20,9 @@ const posts = (await getCollection('blog')).sort(
 			main {
 				width: 960px;
 			}
+			section {
+				margin-top: 2rem;
+			}
 			ul {
 				display: flex;
 				flex-wrap: wrap;
@@ -66,8 +69,11 @@ const posts = (await getCollection('blog')).sort(
 				box-shadow: var(--box-shadow);
 			}
 			@media (max-width: 720px) {
+				section {
+					margin-top: 1.5em;
+				}
 				ul {
-					gap: 0.5em;
+					gap: 1.5em;
 				}
 				ul li {
 					margin-bottom: 0;
